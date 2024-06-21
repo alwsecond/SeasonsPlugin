@@ -100,8 +100,4 @@ public class main extends JavaPlugin implements Listener {
             block.setType(Material.WATER);
         }, 40);
     }
-    @Override
-    public void onDisable() {
-
-    }
 }
