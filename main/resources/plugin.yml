@@ -1,0 +1,10 @@
+name: main
+version: '1.1.1'
+main: abvgd.main
+api-version: '1.20'
+commands:
+  seasons:
+    description: seasons
+    usage: /<command> <season>
+    aliases:
+      - ss
