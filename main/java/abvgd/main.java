@@ -67,8 +67,8 @@ public class main extends JavaPlugin implements Listener {
     }
     @EventHandler
     public void onLoadChunk(ChunkLoadEvent e) {
-        ArrayList<Block> blockArray = new ArrayList<Block>();
-        ArrayList<Block> waterArray = new ArrayList<Block>();
+        ArrayList<Block> blockArray = new ArrayList<>();
+        ArrayList<Block> waterArray = new ArrayList<>();
         if (e.getWorld().getEnvironment() == World.Environment.NORMAL) {
             Chunk chunk = e.getChunk();
             for (int i = 0; i < 16; i++) {
@@ -91,13 +91,9 @@ public class main extends JavaPlugin implements Listener {
         if (!waterArray.isEmpty()) for (Block block : waterArray) SchedulerWaterRemove(block);
     }
     public void SchedulerRemove(Block block) {
-        Bukkit.getScheduler().scheduleSyncDelayedTask(this, () -> {
-            block.setType(Material.AIR);
-        }, 40);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(this, () -> block.setType(Material.AIR), 40);
     }
     public void SchedulerWaterRemove(Block block) {
-        Bukkit.getScheduler().scheduleSyncDelayedTask(this, () -> {
-            block.setType(Material.WATER);
-        }, 40);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(this, () -> block.setType(Material.WATER), 40);
     }
 }
